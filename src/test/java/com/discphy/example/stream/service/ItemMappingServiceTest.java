@@ -55,10 +55,6 @@ class ItemMappingServiceTest {
             }
         }
 
-        for (Item book : books) {
-            System.out.println("book = " + book);
-        }
-
     	//then
         assertThat(books).hasSize(2);
         assertThat(books).extracting("quantity").containsOnly(0);
@@ -71,10 +67,6 @@ class ItemMappingServiceTest {
                 .filter(item -> item.getItemName().contains("책"))
                 .map(this::soldOutItem)
                 .collect(Collectors.toList());
-
-        for (Item book : books) {
-            System.out.println("book = " + book);
-        }
 
     	//then
         assertThat(books).hasSize(2);

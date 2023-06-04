@@ -1,17 +1,14 @@
 package com.discphy.example.stream.service;
 
 import com.discphy.example.stream.domain.Category;
-import com.discphy.example.stream.domain.Item;
 import com.discphy.example.stream.domain.ItemCategory;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 import static com.discphy.example.stream.domain.Category.*;
 import static java.util.stream.Collectors.groupingBy;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.offset;
 
 class ItemAggregationServiceTest {
 
@@ -52,8 +49,7 @@ class ItemAggregationServiceTest {
     @Test
     void 스트림_상품_카테고리_그룹핑() {
         //when
-        Map<Category, List<ItemCategory>> itemGroups = items.stream()
-                .collect(groupingBy(ItemCategory::getCategory));
+        Map<Category, List<ItemCategory>> itemGroups = items.stream().collect(groupingBy(ItemCategory::getCategory));
 
         //then
         assertThat(itemGroups.keySet()).contains(BOOK, CAR, FOOD, LAPTOP);
