@@ -51,6 +51,8 @@ class ItemAggregationServiceTest {
         //when
         Map<Category, List<ItemCategory>> itemGroups = items.stream().collect(groupingBy(ItemCategory::getCategory));
 
+        System.out.println("itemGroups = " + itemGroups);
+
         //then
         assertThat(itemGroups.keySet()).contains(BOOK, CAR, FOOD, LAPTOP);
         assertThat(itemGroups.get(BOOK).size()).isEqualTo(2);

@@ -44,7 +44,7 @@ class ItemMappingServiceTest {
     }
 
     @Test
-    void foreach_상품명이_책인_상품을_수량을_0개로() {
+    void for_상품명이_책인_상품을_수량을_0개로() {
     	//given
         List<Item> books = new ArrayList<>();
 

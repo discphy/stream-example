@@ -25,13 +25,15 @@ class ItemFilterServiceTest {
     );
 
     @Test
-    void foreach_상품명이_자동차인것들만_필터링() {
+    void for_상품명이_자동차인것들만_필터링() {
     	//given
         List<Item> cars = new ArrayList<>();
 
     	//when
         for (Item item : items) {
-            if (item.getItemName().contains("자동차")) cars.add(item);
+            if (item.getItemName().contains("자동차")) {
+                cars.add(item);
+            }
         }
 
         //then
